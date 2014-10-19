@@ -63,11 +63,11 @@ pkg clean -a -y
 echo 'Preparing disk for vagrant package command'
 dd if=/dev/zero of=/tmp/out bs=1m > /dev/null 2>&1 || true
 
-# Remove the history
-cat /dev/null > /root/.history
-
 # Empty out tmp directory
 rm -rf /tmp/*
+
+# Remove the history
+cat /dev/null > /root/.history
 
 # Done
 echo "Done. Power off the box and package it up with Vagrant using 'vagrant package'."
