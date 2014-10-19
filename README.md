@@ -1,3 +1,5 @@
+# Create a FreeBSD Vagrant Box
+
 Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available which run FreeBSD out of the box, it's good to know how to create such a box by yourself. An advantage might be, that the box comes with with only those packages installed you really need. That's why I decided to create a minimal FreeBSD box with only as much packages installed to run Ansible. With Ansible installed it's quite easy to perfectly adapt the box afterwards. 
 
 ### Create a VB virtual machine
@@ -34,6 +36,11 @@ Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available w
         vagrant package --base my-virtual-machine
 
 2. The file `package.box` can be refrenced by `vm.box_url` configuration parameter within your Vagrantfile.
+
+
+### Box File
+
+Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10-vagrant-base.box
 
 ### Links
 1. mfsBSD: https://www.freebsd.org/doc/en/articles/remote-install/preparation.html
