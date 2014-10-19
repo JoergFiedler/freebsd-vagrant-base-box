@@ -15,9 +15,9 @@ service sshd start
 
 # Add FreeBSD package repository
 mkdir -p /usr/local/etc/pkg/repos
-cat << EOT >> /usr/local/etc/pkg/repos/FreeBSD.conf
+cat << EOT > /usr/local/etc/pkg/repos/FreeBSD.conf
 FreeBSD: {
-  url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest",
+  url: "pkg+http://pkg.FreeBSD.org/\${ABI}/latest",
     enabled: yes
   }
 EOT
