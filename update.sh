@@ -8,7 +8,6 @@ VAGRANT_PUBLIC_KEY="https://raw.github.com/mitchellh/vagrant/master/keys/vagrant
 echo 'hostname="vagrant"' >> /etc/rc/conf
 echo 'ifconfig_'${INTERFACE}'="DHCP"' >> /etc/rc.conf
 echo 'sshd_enable="YES"' >> /etc/rc.conf
-echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 # Start network services
 /sbin/dhclient ${INTERFACE}
