@@ -5,16 +5,16 @@ PACKAGES="ca_root_nss virtualbox-ose-additions sudo bash"
 VAGRANT_PUBLIC_KEY="https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub"
 
 # Network configuration
-echo 'hostname="vagrant"' >> /etc/rc/conf
+echo 'hostname="vagrant"' >> /etc/rc.conf
 echo 'ifconfig_'${INTERFACE}'="DHCP"' >> /etc/rc.conf
 echo 'sshd_enable="YES"' >> /etc/rc.conf
 
 # Start network services
-/sbin/dhclient ${INTERFACE}
 service sshd keygen
 service sshd start
 
 # Add FreeBSD package repository
+mkdir -p /usr/local/etc/pkg/repos
 cat << EOT >> /usr/local/etc/pkg/repos/FreeBSD.conf
 FreeBSD: {
   url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest",
@@ -61,7 +61,7 @@ pkg clean -a -y
 
 # Shrink final box file
 echo 'Preparing disk for vagrant package command'
-dd if=/dev/zero of=/tmp/out bs=1m 2>&1 > /dev/null || true
+dd if=/dev/zero of=/tmp/out bs=1m > /dev/null 2>&1 || true
 
 # Remove the history
 cat /dev/null > /root/.history
