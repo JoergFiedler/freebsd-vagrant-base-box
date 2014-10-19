@@ -41,6 +41,7 @@ Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available w
 ### Box File
 
 Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10-vagrant-base.box
+SHA256 Checksum: 3418526d3a67313d3763ac75eb5b46c2d5d90837342e9d4fdef46dc387128735
 
 ### Links
 1. mfsBSD: https://www.freebsd.org/doc/en/articles/remote-install/preparation.html
