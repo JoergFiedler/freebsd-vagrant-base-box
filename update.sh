@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh -e
 
 INTERFACE="vtnet0"
 PACKAGES="ca_root_nss virtualbox-ose-additions sudo bash"
@@ -61,7 +61,8 @@ echo 'autoboot_delay="1"' >> /boot/loader.conf
 pkg clean -a -y
 
 # Shrink final box file
-dd if=/dev/zero of=/tmp/out bs=1m
+echo 'Preparing disk for vagrant package command'
+dd if=/dev/zero of=/tmp/out bs=1m 2>&1 > /dev/null || true
 
 # Remove the history
 cat /dev/null > /root/.history
