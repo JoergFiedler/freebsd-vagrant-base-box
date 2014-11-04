@@ -37,12 +37,11 @@ echo 'vboxservice_enable="YES"' >> /etc/rc.conf
 ln -s /usr/local/share/certs/ca-root-nss.crt /etc/ssl/cert.pem
 
 # Create the vagrant user
-pw useradd -n vagrant -s /usr/local/bin/bash -m -G wheel -h 0 <<EOP
-vagrant
-EOP
+echo vagrant | pw useradd -n vagrant -s /usr/local/bin/bash -m -G wheel -H 0
 
 # Enable sudo for vagrant user
-echo "%vagrant ALL=(ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers
+mkdir /usr/local/etc/sudoers.d
+echo "%vagrant ALL=(ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers.d/vagrant
 
 # Authorize vagrant to login without a key
 mkdir /home/vagrant/.ssh
