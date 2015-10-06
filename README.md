@@ -1,4 +1,4 @@
-# Create a FreeBSD 10. 1 Vagrant Box File
+# Create a FreeBSD 10.2 Vagrant Box File
 
 Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available which run FreeBSD out of the box, it's good to know how to create such a box by yourself. An advantage might be, that the box comes with only those packages installed you really need. That's why I decided to create a minimal FreeBSD box with only as much packages installed to run Ansible. With Ansible installed it's quite easy to perfectly adapt the box afterwards.
 
