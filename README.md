@@ -47,17 +47,17 @@ Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available w
 ### Box File
 
 #### FreeBSD 10.2
-Download the final box file here: https://vastland.moumantai.de.s3.amazonaws.com/public/FreeBSD/vagrant-box/FreeBSD-10.2-vagrant-base.box
+Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.2-vagrant-base.box
 
 SHA256 Checksum: 26d251676c9747a6e1a7446bfd5e50cbdb8de09e1eb58295fd91491267a55e46
 
 #### FreeBSD 10.1
-Download the final box file here: https://vastland.moumantai.de.s3.amazonaws.com/public/FreeBSD/vagrant-box/FreeBSD-10.1-vagrant-base.box
+Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.1-vagrant-base.box
 
 SHA256 Checksum: 67f6d3e60d26ae811b685f13ddd3683a0cc7280ac8a104203006573ea831e699
 
 #### FreeBSD 10.0
-Download the final box file here: https://vastland.moumantai.de.s3.amazonaws.com/public/FreeBSD/vagrant-box/FreeBSD-10-vagrant-base.box
+Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10-vagrant-base.box
 
 SHA256 Checksum: 3418526d3a67313d3763ac75eb5b46c2d5d90837342e9d4fdef46dc387128735
 
