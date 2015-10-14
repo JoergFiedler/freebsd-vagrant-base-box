@@ -8,11 +8,18 @@ USER="vagrant"
 # Network configuration
 echo 'hostname="vagrant"' >> /etc/rc.conf
 echo 'ifconfig_'${INTERFACE}'="DHCP"' >> /etc/rc.conf
-echo 'sshd_enable="YES"' >> /etc/rc.conf
 
-# Start network services
+# Enable services
+echo 'sshd_enable="YES"' >> /etc/rc.conf
+echo 'pf_enable="YES"' >> /etc/rc.conf
+echo 'pflog_enable="YES"' >> /etc/rc.conf
+echo 'pass all' >> /etc/pf.conf
+
+# Start services
 service sshd keygen
 service sshd start
+service pf start
+service pflog start
 
 # Add FreeBSD package repository
 mkdir -p /usr/local/etc/pkg/repos
