@@ -24,7 +24,7 @@ Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available w
 
 6. Install FreeBSD.
 
-        zfsinstall -d /dev/ada0 -u/cdrom/10.0-RELEASE-amd64 -s 4G
+        zfsinstall -d /dev/ada0 -u/cdrom/10.2-RELEASE-amd64 -s 4G
 
 8. Stop the VM.
 9. Remove attached ISO
