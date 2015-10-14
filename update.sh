@@ -2,7 +2,8 @@
 
 INTERFACE="vtnet0"
 PACKAGES="ca_root_nss virtualbox-ose-additions sudo bash"
-VAGRANT_PUBLIC_KEY="https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub"
+PUBLIC_KEY="https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub"
+USER="vagrant"
 
 # Network configuration
 echo 'hostname="vagrant"' >> /etc/rc.conf
@@ -36,21 +37,21 @@ echo 'vboxservice_enable="YES"' >> /etc/rc.conf
 # Activate installed root certifcates
 ln -s /usr/local/share/certs/ca-root-nss.crt /etc/ssl/cert.pem
 
-# Create the vagrant user
-echo vagrant | pw useradd -n vagrant -s /usr/local/bin/bash -m -G wheel -H 0
+# Create the user
+echo ${USER} | pw useradd -n ${USER} -s /usr/local/bin/bash -m -G wheel -H 0
 
-# Enable sudo for vagrant user
+# Enable sudo for user
 mkdir /usr/local/etc/sudoers.d
-echo "%vagrant ALL=(ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers.d/vagrant
+echo "%${USER} ALL=(ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers.d/${USER}
 
-# Authorize vagrant to login without a key
-mkdir /home/vagrant/.ssh
-chmod 700 /home/vagrant/.ssh
-touch /home/vagrant/.ssh/authorized_keys
-chown -R vagrant:vagrant /home/vagrant
+# Authorize user to login without a key
+mkdir /home/${USER}/.ssh
+chmod 700 /home/${USER}/.ssh
+touch /home/${USER}/.ssh/authorized_keys
+chown -R ${USER}:${USER} /home/${USER}
 
 # Get the public key and save it in the `authorized_keys`
-fetch -o /home/vagrant/.ssh/authorized_keys ${VAGRANT_PUBLIC_KEY}
+fetch -o /home/${USER}/.ssh/authorized_keys ${PUBLIC_KEY}
 
 # Speed up boot process
 echo 'autoboot_delay="1"' >> /boot/loader.conf
