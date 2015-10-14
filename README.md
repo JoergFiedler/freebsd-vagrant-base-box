@@ -46,6 +46,12 @@ Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available w
 
 ### Box File
 
+#### FreeBSD 10.2 (pf enabled)
+Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.2-pf-enabled-vagrant-base.box
+
+SHA256 Checksum: 100e0cb5a6c58d197e0e95013bf80b189356ae0f75af2f8e6089d880d8d3cb55
+
+
 #### FreeBSD 10.2
 Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.2-vagrant-base.box
 
