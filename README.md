@@ -48,21 +48,11 @@ Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available w
 
 ### Box File
 
-#### FreeBSD 10.2 (pf, 50GB)
-Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.2-pf-50g-vagrant-base.box
-
-SHA256 Checksum: bce99b6d01764d1e49afa367dc255b2087876d72afb75be56b12f1315f05a2cf
-
-#### FreeBSD 10.2 (pf enabled)
-Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.2-pf-enabled-vagrant-base.box
-
-SHA256 Checksum: 100e0cb5a6c58d197e0e95013bf80b189356ae0f75af2f8e6089d880d8d3cb55
-
-
 #### FreeBSD 10.2
-Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.2-vagrant-base.box
 
-SHA256 Checksum: 26d251676c9747a6e1a7446bfd5e50cbdb8de09e1eb58295fd91491267a55e46
+Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.2-vagrant-76c0d08.box
+
+SHA256 Checksum: 76c0d08009860ca70dc9aa673e2356bc008aa66af2dde3bbc27c25bcc7f8b2d8
 
 #### FreeBSD 10.1
 Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.1-vagrant-base.box
