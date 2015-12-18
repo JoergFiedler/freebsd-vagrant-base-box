@@ -7,7 +7,7 @@ USER="vagrant"
 
 # Network configuration
 echo 'hostname="vagrant"' >> /etc/rc.conf
-echo 'ifconfig_'${INTERFACE}'="DHCP"' >> /etc/rc.conf
+echo 'ifconfig_'${INTERFACE}'="DHCP -tso"' >> /etc/rc.conf
 
 # Enable services
 echo 'sshd_enable="YES"' >> /etc/rc.conf
