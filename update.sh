@@ -25,9 +25,9 @@ service pflog start
 mkdir -p /usr/local/etc/pkg/repos
 cat << EOT > /usr/local/etc/pkg/repos/FreeBSD.conf
 FreeBSD: {
-  url: "pkg+http://pkg.FreeBSD.org/\${ABI}/latest",
-    enabled: yes
-  }
+  url: "pkg+http://pkg.eu.FreeBSD.org/\${ABI}/latest",
+  enabled: yes
+}
 EOT
 env ASSUME_ALWAYS_YES=true /usr/sbin/pkg bootstrap -f
 pkg update
