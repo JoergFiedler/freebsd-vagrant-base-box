@@ -1,23 +1,32 @@
 #!/bin/sh -e
 
-INTERFACE="vtnet0"
-PACKAGES="ca_root_nss virtualbox-ose-additions sudo bash"
-PUBLIC_KEY="https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub"
-USER="vagrant"
+HOST_NAME="${HOSTNAME:-"marvin.darkcity"}"
+INTERFACE="${EXT_IF:-"vtnet0"}"
+PACKAGES="${PACKAGES:-"ca_root_nss sudo bash python"}"
+PUBLIC_KEY="${SSH_PUBLIC_KEY_URL:-"https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub"}"
+USER="${SSH_USER:-"vagrant"}"
+ZPOOL_NAME="${ZPOOL_NAME:-"tank"}"
+
+# ZFS filesystems
+zfs create -o mountpoint=/home ${ZPOOL_NAME}/home
 
 # Network configuration
-echo 'hostname="vagrant"' >> /etc/rc.conf
+echo 'hostname="${HOSTNAME}"' >> /etc/rc.conf
 echo 'ifconfig_'${INTERFACE}'="DHCP -tso"' >> /etc/rc.conf
 
 # Enable services
+echo 'sendmail_enable="NONE"' >> /etc/rc.conf
 echo 'sshd_enable="YES"' >> /etc/rc.conf
 echo 'pf_enable="YES"' >> /etc/rc.conf
 echo 'pflog_enable="YES"' >> /etc/rc.conf
 echo 'pass all' >> /etc/pf.conf
 
+# Update Base
+freebsd-update fetch --not-running-from-cron
+freebsd-update install --not-running-from-cron
+
 # Start services
 service sshd keygen
-service sshd start
 service pf start
 service pflog start
 
@@ -37,18 +46,14 @@ for package in ${PACKAGES}; do
   pkg install -y ${package}
 done
 
-# Activate vbox additions
-echo 'vboxguest_enable="YES"' >> /etc/rc.conf
-echo 'vboxservice_enable="YES"' >> /etc/rc.conf
-
-# Activate installed root certifcates
-ln -s /usr/local/share/certs/ca-root-nss.crt /etc/ssl/cert.pem
-
 # Create the user
 echo "*" | pw useradd -n ${USER} -s /usr/local/bin/bash -m -G wheel -H 0
 
+# Disable root's password
+chpass -p "*" root
+
 # Enable sudo for user
-mkdir /usr/local/etc/sudoers.d
+mkdir -p /usr/local/etc/sudoers.d
 echo "%${USER} ALL=(ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers.d/${USER}
 
 # Authorize user to login without a key
@@ -61,21 +66,20 @@ chown -R ${USER}:${USER} /home/${USER}
 fetch -o /home/${USER}/.ssh/authorized_keys ${PUBLIC_KEY}
 
 # Speed up boot process
-echo 'autoboot_delay="1"' >> /boot/loader.conf
+echo 'autoboot_delay="2"' >> /boot/loader.conf
 
 # Clean up installed packages
 pkg clean -a -y
 
-# Shrink final box file
-echo 'Preparing disk for vagrant package command'
-dd if=/dev/zero of=/tmp/out bs=1m > /dev/null 2>&1 || true
-
 # Empty out tmp directory
 rm -rf /tmp/*
+
+# Make bash happy
+echo "fdesc /dev/fd fdescfs rw 0 0" >> /etc/fstab
 
 # Remove the history
 cat /dev/null > /root/.history
 
 # Done
-echo "Done. Power off the box and package it up with Vagrant using 'vagrant package'."
+echo "Minial FreeBSD box set up. Power off, take a snapshot, or package it. Whatever, enjoy!"
 
