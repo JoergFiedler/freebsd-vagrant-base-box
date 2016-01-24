@@ -52,17 +52,17 @@ Note: You may use this short link instead: `http://bit.ly/1lEHtrx`.
 
 #### FreeBSD 10.2
 
-Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.2-vagrant-abe25b9.box
+Download the final box file here: http://vastland.moumantai.de/FreeBSD/vagrant-box/FreeBSD-10.2-vagrant-abe25b9.box
 
 SHA256 Checksum: abe25b9b2b934053a624632323f7c62c1fe6dce0fd7453fb484cc2aba17f4056
 
 #### FreeBSD 10.1
-Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10.1-vagrant-base.box
+Download the final box file here: http://vastland.moumantai.de/FreeBSD/vagrant-box/FreeBSD-10.1-vagrant-base.box
 
 SHA256 Checksum: 67f6d3e60d26ae811b685f13ddd3683a0cc7280ac8a104203006573ea831e699
 
 #### FreeBSD 10.0
-Download the final box file here: https://s3-eu-west-1.amazonaws.com/vastland.moumantai.de/public/FreeBSD/vagrant-box/FreeBSD-10-vagrant-base.box
+Download the final box file here: http://vastland.moumantai.de/FreeBSD/vagrant-box/FreeBSD-10-vagrant-base.box
 
 SHA256 Checksum: 3418526d3a67313d3763ac75eb5b46c2d5d90837342e9d4fdef46dc387128735
 
