@@ -26,7 +26,6 @@ freebsd-update fetch --not-running-from-cron
 freebsd-update install --not-running-from-cron
 
 # Start services
-service sshd keygen
 service pf start
 service pflog start
 
