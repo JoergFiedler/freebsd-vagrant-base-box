@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-HOST_NAME="${HOSTNAME:-"marvin.darkcity"}"
+HOSTNAME="${HOSTNAME:-""}"
 INTERFACE="${EXT_IF:-"vtnet0"}"
 PACKAGES="${PACKAGES:-"ca_root_nss sudo bash python"}"
 PUBLIC_KEY="${SSH_PUBLIC_KEY_URL:-"https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub"}"
