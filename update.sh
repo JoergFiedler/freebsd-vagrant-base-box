@@ -11,7 +11,7 @@ ZPOOL_NAME="${ZPOOL_NAME:-"tank"}"
 zfs create -o mountpoint=/home ${ZPOOL_NAME}/home
 
 # Network configuration
-echo 'hostname="${HOSTNAME}"' >> /etc/rc.conf
+echo 'hostname="'${HOSTNAME}'"' >> /etc/rc.conf
 echo 'ifconfig_'${INTERFACE}'="DHCP -tso"' >> /etc/rc.conf
 
 # Enable services
