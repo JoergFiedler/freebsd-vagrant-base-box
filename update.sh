@@ -4,7 +4,7 @@ HOSTNAME="${HOSTNAME:-""}"
 INTERFACE="${EXT_IF:-"vtnet0"}"
 PACKAGES="${PACKAGES:-"ca_root_nss sudo bash python"}"
 PUBLIC_KEY="${SSH_PUBLIC_KEY_URL:-"https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub"}"
-USER="${SSH_USER:-"vagrant"}"
+SSH_USER="${SSH_USER:-"vagrant"}"
 ZPOOL_NAME="${ZPOOL_NAME:-"tank"}"
 
 # ZFS filesystems
@@ -46,23 +46,23 @@ for package in ${PACKAGES}; do
 done
 
 # Create the user
-echo "*" | pw useradd -n ${USER} -s /usr/local/bin/bash -m -G wheel -H 0
+echo "*" | pw useradd -n ${SSH_USER} -s /usr/local/bin/bash -m -G wheel -H 0
 
 # Disable root's password
 chpass -p "*" root
 
 # Enable sudo for user
 mkdir -p /usr/local/etc/sudoers.d
-echo "%${USER} ALL=(ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers.d/${USER}
+echo "%${SSH_USER} ALL=(ALL) NOPASSWD: ALL" >> /usr/local/etc/sudoers.d/${SSH_USER}
 
 # Authorize user to login without a key
-mkdir /home/${USER}/.ssh
-chmod 700 /home/${USER}/.ssh
-touch /home/${USER}/.ssh/authorized_keys
-chown -R ${USER}:${USER} /home/${USER}
+mkdir /home/${SSH_USER}/.ssh
+chmod 700 /home/${SSH_USER}/.ssh
+touch /home/${SSH_USER}/.ssh/authorized_keys
+chown -R ${SSH_USER}:${SSH_USER} /home/${SSH_USER}
 
 # Get the public key and save it in the `authorized_keys`
-fetch -o /home/${USER}/.ssh/authorized_keys ${PUBLIC_KEY}
+fetch -o /home/${SSH_USER}/.ssh/authorized_keys ${PUBLIC_KEY}
 
 # Speed up boot process
 echo 'autoboot_delay="2"' >> /boot/loader.conf
