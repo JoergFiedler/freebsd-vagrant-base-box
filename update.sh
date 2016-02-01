@@ -9,7 +9,7 @@ ZPOOL_NAME="${ZPOOL_NAME:-"tank"}"
 
 _set_vultr_hostname() {
   local _ip=$(ifconfig vtnet0 | sed -En 's/.*inet ([0-9\.]*).*/\1/p')
-  HOSTNAME=$(host $_IP | sed -En 's/.* ([0-9\.]*.vultr.com)\./\1/p')
+  HOSTNAME=$(host $_ip | sed -En 's/.* ([0-9\.]*.vultr.com)\./\1/p')
 }
 
 # ZFS filesystems
