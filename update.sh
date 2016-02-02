@@ -7,16 +7,10 @@ PUBLIC_KEY="${SSH_PUBLIC_KEY_URL:-"https://raw.github.com/mitchellh/vagrant/mast
 SSH_USER="${SSH_USER:-"vagrant"}"
 ZPOOL_NAME="${ZPOOL_NAME:-"tank"}"
 
-_set_vultr_hostname() {
-  local _ip=$(ifconfig vtnet0 | sed -En 's/.*inet ([0-9\.]*).*/\1/p')
-  HOSTNAME=$(host $_ip | sed -En 's/.* ([0-9\.]*.vultr.com)\./\1/p')
-}
-
 # ZFS filesystems
 zfs create -o mountpoint=/home ${ZPOOL_NAME}/home
 
 # Network configuration
-[ ${VULTR} ] && _set_vultr_hostname
 echo 'hostname="'${HOSTNAME}'"' >> /etc/rc.conf
 echo 'ifconfig_'${INTERFACE}'="DHCP -tso"' >> /etc/rc.conf
 
