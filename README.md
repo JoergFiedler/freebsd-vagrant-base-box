@@ -4,7 +4,7 @@ Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available w
 
 ### Prerequisites
 
-1. Virtualbox installed, [download page](https://www.virtualbox.org/wiki/Downloads)
+1. VirtualBox installed, [download page](https://www.virtualbox.org/wiki/Downloads)
 
 2. Vagrant installed, [download page](https://www.vagrantup.com/downloads.html)
 
@@ -12,19 +12,16 @@ Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available w
 
 1. Create an virtual machine with NAT enabled for the first network adapter and add set the adapter type to `virtio-net`. Make sure the size of the configured hard disk is at least 8 GB.
 
-2. Add the [downloaded mfsBSD ISO](http://mfsbsd.vx.sk/) as bootable CD device.
+2. Add the [downloaded mfsBSD ISO](http://mfsbsd.vx.sk/) (any edition) 
+as bootable CD device.
 
 3. Boot.
 
 4. Login with `root` and `mfsroot`.
 
-5. Mount the mfsBSD ISO.
+5. Install FreeBSD.
 
-        mount_cd9660 /dev/cd0 /cdrom`
-
-6. Install FreeBSD.
-
-        zfsinstall -d /dev/ada0 -u /cdrom/10.2-RELEASE-amd64 -s 4G
+        zfsinstall -d /dev/ada0
 
 8. Stop the VM.
 9. Remove attached ISO
@@ -77,14 +74,14 @@ SHA256 Checksum: 3418526d3a67313d3763ac75eb5b46c2d5d90837342e9d4fdef46dc38712873
 
 `pkg info`
 
-    bash-4.3.42_1                  The GNU Project's Bourne Again SHell
-    ca_root_nss-3.21               Root certificate bundle from the Mozilla Project
-    gettext-runtime-0.19.6         GNU gettext runtime libraries and programs
-    indexinfo-0.2.4                Utility to regenerate the GNU info page index
-    iocage-1.7.3                   Full featured, no dependency Jail container manager
-    libffi-3.2.1                   Foreign Function Interface
-    pkg-1.6.2                      Package manager
-    python-2.7_2,2                 The "meta-port" for the default version of Python interpreter
-    python2-2_3                    The "meta-port" for version 2 of the Python interpreter
-    python27-2.7.11_1              Interpreted object-oriented programming language
-    sudo-1.8.15                    Allow others to run commands as root
+    bash                           The GNU Project's Bourne Again SHell
+    ca_root_nss                    Root certificate bundle from the Mozilla Project
+    gettext-runtime                GNU gettext runtime libraries and programs
+    indexinfo                      Utility to regenerate the GNU info page index
+    iocage                         Full featured, no dependency Jail container manager
+    libffi                         Foreign Function Interface
+    pkg                            Package manager
+    python                         The "meta-port" for the default version of Python interpreter
+    python2                        The "meta-port" for version 2 of the Python interpreter
+    python27                       Interpreted object-oriented programming language
+    sudo                           Allow others to run commands as root
