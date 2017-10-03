@@ -35,9 +35,9 @@ as bootable CD device.
          https://raw.githubusercontent.com/JoergFiedler/freebsd-vagrant-base-box/master/update.sh \
          | sh | tee out.log
 
-Note: You may use this short link instead: `http://bit.ly/1lEHtrx`.
+        Note: You may use this short link instead: `http://bit.ly/1lEHtrx`.
 
-10. Halt the VM.
+11. Halt the VM.
 
 ### Create the Box File
 
@@ -50,6 +50,12 @@ parameter within your `Vagrantfile`.
 
 
 ### Box File
+
+#### FreeBSD 11.1
+
+Download the final box file here: http://vastland.moumantai.de/FreeBSD/vagrant-box/FreeBSD-11.1-vagrant-27f8db1.box
+
+SHA256 Checksum:  `27f8db1698cf3a53cfa94629e0d4ae58ce237137443564991feb285e0745e0bf`
 
 #### FreeBSD 11.0
 
