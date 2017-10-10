@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-HOSTNAME="${HOSTNAME:-""}"
+HOSTNAME="${HOSTNAME:-"amnesiac"}"
 INTERFACE="${EXT_IF:-"vtnet0"}"
 PACKAGES="${PACKAGES:-"ca_root_nss sudo bash python"}"
 PUBLIC_KEY="${PUBLIC_KEY:-"https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub"}"
