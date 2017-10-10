@@ -53,9 +53,9 @@ parameter within your `Vagrantfile`.
 
 #### FreeBSD 11.1
 
-Download the final box file here: http://vastland.moumantai.de/FreeBSD/vagrant-box/FreeBSD-11.1-vagrant-27f8db1.box
+Download the final box file here: http://vastland.moumantai.de/FreeBSD/vagrant-box/FreeBSD-11.1-vagrant-b67e92c.box
 
-SHA256 Checksum:  `27f8db1698cf3a53cfa94629e0d4ae58ce237137443564991feb285e0745e0bf`
+SHA256 Checksum:  `b67e92cff0de9ace385d16640be8ac7cc00d349e6ecd4aad3921b3ea0725e00f`
 
 #### FreeBSD 11.0
 
