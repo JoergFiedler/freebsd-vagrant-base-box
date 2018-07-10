@@ -1,10 +1,16 @@
 # Create a FreeBSD Vagrant Box File
 
-Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available which run FreeBSD out of the box, it's good to know how to create such a box by yourself. An advantage might be, that the box comes with only those packages installed you really need. That's why I decided to create a minimal FreeBSD box with only as much packages installed to run Ansible. With Ansible installed it's quite easy to perfectly adapt the box afterwards.
+Despite there are several [Vagrant boxes](http://www.vagrantbox.es/) available
+which run FreeBSD out of the box, it's good to know how to create such a box by
+yourself. An advantage might be, that the box comes with only those packages
+installed you really need. That's why I decided to create a minimal FreeBSD box
+with only as much packages installed to run Ansible. With Ansible installed it's
+quite easy to perfectly adapt the box afterwards.
 
 ### Prerequisites
 
-1. VirtualBox installed, [download page](https://www.virtualbox.org/wiki/Downloads)
+1. VirtualBox installed, [download
+page](https://www.virtualbox.org/wiki/Downloads)
 
 2. Vagrant installed, [download page](https://www.vagrantup.com/downloads.html)
 
@@ -50,6 +56,12 @@ parameter within your `Vagrantfile`.
 
 
 ### Box File
+
+#### FreeBSD 11.2
+
+Download the final box file here: http://vastland.moumantai.de/FreeBSD/vagrant-box/FreeBSD-11.2-vagrant-dcf9bde9.box
+
+SHA256 Checksum: dcf9bde97f9aaf72a8aa13b8056523c7e96a1891e51c97ead79816a29498e79b
 
 #### FreeBSD 11.1
 
