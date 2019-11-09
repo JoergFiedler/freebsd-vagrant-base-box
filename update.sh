@@ -2,7 +2,7 @@
 
 HOSTNAME="${HOSTNAME:-"amnesiac"}"
 INTERFACE="${EXT_IF:-"vtnet0"}"
-PACKAGES="${PACKAGES:-"ca_root_nss sudo bash python"}"
+PACKAGES="${PACKAGES:-"ca_root_nss sudo python"}"
 PUBLIC_KEY="${PUBLIC_KEY:-"https://raw.github.com/mitchellh/vagrant/master/keys/vagrant.pub"}"
 SSH_USER="${SSH_USER:-"vagrant"}"
 ZPOOL_NAME="${ZPOOL_NAME:-"tank"}"
@@ -29,14 +29,6 @@ freebsd-update install --not-running-from-cron
 service pf start
 service pflog start
 
-# Add FreeBSD package repository
-mkdir -p /usr/local/etc/pkg/repos
-cat << EOT > /usr/local/etc/pkg/repos/FreeBSD.conf
-FreeBSD: {
-  url: "pkg+http://pkg.eu.FreeBSD.org/\${ABI}/latest",
-  enabled: yes
-}
-EOT
 env ASSUME_ALWAYS_YES=true /usr/sbin/pkg bootstrap -f
 pkg update
 
