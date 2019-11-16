@@ -38,7 +38,7 @@ for package in ${PACKAGES}; do
 done
 
 # Create the user
-echo "*" | pw useradd -n ${SSH_USER} -s /usr/local/bin/bash -m -G wheel -H 0
+echo "*" | pw useradd -n ${SSH_USER} -s /bin/tcsh -m -G wheel -H 0
 
 # Disable root's password
 chpass -p "*" root
