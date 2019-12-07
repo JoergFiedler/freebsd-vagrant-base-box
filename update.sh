@@ -72,5 +72,5 @@ echo "fdesc /dev/fd fdescfs rw 0 0" >> /etc/fstab
 cat /dev/null > /root/.history
 
 # Done
-echo "Minial FreeBSD box set up. Power off, take a snapshot, or package it. Whatever, enjoy!"
+echo "Minimal FreeBSD box set up. Power off, take a snapshot, or package it. Whatever, enjoy!"
 
